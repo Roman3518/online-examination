@@ -1,0 +1,196 @@
+/* Online Examination System — clean professional ed-tech look
+   (white surfaces, blue primary actions, soft cards) */
+
+:root{
+  --bg:#F6F8FB; --card:#FFFFFF; --text:#1B2130; --muted:#6B7280; --border:#E4E8F0;
+  --primary:#1456F0; --primary-dark:#0E3FC2; --primary-soft:#EAF1FE;
+  --success:#16A34A; --success-soft:#E8F8EE; --danger:#DC2626; --danger-soft:#FDECEC;
+  --shadow:0 1px 2px rgba(16,24,40,.04), 0 1px 3px rgba(16,24,40,.06);
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    --bg:#0E1117; --card:#171B24; --text:#ECEEF3; --muted:#9BA3B2; --border:#2A3040;
+    --primary:#4C82FF; --primary-dark:#2F65E8; --primary-soft:#1B2740;
+    --success:#3FCB7E; --success-soft:#143324; --danger:#F26C6C; --danger-soft:#3A1B1C;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 1px 3px rgba(0,0,0,.35);
+  }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);
+  font:15.5px/1.6 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:Poppins,Inter,sans-serif;font-weight:600;margin:0;letter-spacing:-.2px}
+h1{font-size:1.28rem}h2{font-size:1.08rem;margin-bottom:12px}h3{font-size:1rem}
+a{color:var(--primary);text-decoration:none}
+:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;transition-duration:.001ms!important}}
+
+/* ---------- top nav ---------- */
+.top{background:var(--card);border-bottom:1px solid var(--border);box-shadow:var(--shadow);position:sticky;top:0;z-index:5}
+.top>div{max-width:900px;margin:0 auto;padding:13px 20px;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.top h1{color:var(--primary)}
+.badge{display:inline-flex;align-items:center;gap:9px;padding:5px 12px 5px 5px;
+  border:1px solid var(--border);border-radius:99px;background:var(--bg);font-size:.86rem}
+.badge .av{width:26px;height:26px;border-radius:50%;background:var(--primary);color:#fff;
+  display:flex;align-items:center;justify-content:center;font:600 .78rem Poppins,sans-serif;flex:none}
+.badge b{font-weight:600}
+.badge span{color:var(--muted);text-transform:capitalize}
+
+main{max-width:900px;margin:0 auto;padding:20px}
+
+/* ---------- surfaces ---------- */
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  box-shadow:var(--shadow);padding:18px 20px;margin-bottom:16px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.mu{color:var(--muted);font-size:.9rem}
+.err{color:var(--danger);font-size:.92rem;min-height:1.2em}
+
+/* ---------- forms ---------- */
+label{display:block;font-size:.84rem;color:var(--muted);font-weight:500;margin:0 0 4px}
+input,select,textarea{width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:8px;
+  background:var(--card);color:var(--text);font:inherit;margin:0 0 12px;transition:border-color .12s}
+input:focus,select:focus,textarea:focus{border-color:var(--primary)}
+textarea{font-family:inherit;resize:vertical}
+
+/* ---------- buttons ---------- */
+button{background:var(--primary);color:#fff;border:1px solid var(--primary);border-radius:8px;
+  padding:9px 18px;font:600 .9rem Inter,sans-serif;cursor:pointer;margin:2px 8px 2px 0;
+  transition:background .12s,border-color .12s}
+button:hover{background:var(--primary-dark);border-color:var(--primary-dark)}
+button:disabled{opacity:.4;cursor:default}
+button.g{background:var(--card);color:var(--primary);border-color:var(--border)}
+button.g:hover{background:var(--primary-soft);border-color:var(--primary);color:var(--primary)}
+button.d{background:var(--card);color:var(--danger);border-color:var(--border)}
+button.d:hover{background:var(--danger-soft);border-color:var(--danger);color:var(--danger)}
+button.on{background:var(--primary-soft);color:var(--primary);border-color:var(--primary)}
+
+/* ---------- tabs ---------- */
+.tabs{display:flex;gap:4px;margin-bottom:16px;border-bottom:1px solid var(--border)}
+.tabs button{background:none;color:var(--muted);border:0;border-bottom:2px solid transparent;
+  border-radius:0;margin:0;padding:10px 16px;font:600 .9rem Inter,sans-serif}
+.tabs button:hover{background:none;color:var(--text)}
+.tabs button.on{color:var(--primary);border-bottom-color:var(--primary)}
+
+/* ---------- stat tiles ---------- */
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:12px;margin-bottom:16px}
+.tile{background:var(--card);border:1px solid var(--border);border-radius:12px;box-shadow:var(--shadow);padding:12px 16px}
+.tile b{font:700 1.5rem Poppins,sans-serif;display:block}
+
+/* ---------- tables ---------- */
+.tw{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.91rem}
+th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--border);white-space:nowrap}
+th{color:var(--muted);font-weight:600;font-size:.8rem;text-transform:uppercase;letter-spacing:.3px}
+
+/* ---------- answer options ---------- */
+.opt{display:flex;gap:10px;align-items:flex-start;padding:11px 14px;border:1.5px solid var(--border);
+  border-radius:10px;margin:8px 0;cursor:pointer;transition:border-color .12s,background .12s}
+.opt:hover{border-color:var(--primary)}
+.opt input{width:auto;margin:4px 0 0;accent-color:var(--primary)}
+.opt.sel{border-color:var(--primary);background:var(--primary-soft)}
+.opt.ok{border-color:var(--success);background:var(--success-soft)}
+.opt.bad{border-color:var(--danger);background:var(--danger-soft)}
+
+/* ---------- question navigator ---------- */
+.pal{display:flex;flex-wrap:wrap;gap:8px}
+.pal button{width:38px;height:38px;padding:0;margin:0;border-radius:8px;
+  background:var(--card);color:var(--text);border:1.5px solid var(--border);font-weight:600}
+.pal button:hover{background:var(--bg)}
+.pal button.ans{background:var(--primary);color:#fff;border-color:var(--primary)}
+.pal button.cur{box-shadow:0 0 0 2px var(--card),0 0 0 4px var(--primary)}
+.pal button.flag{border:2px solid var(--danger)}
+.pal button.ans.flag{box-shadow:inset 0 0 0 2px var(--danger)}
+
+/* ---------- timer ---------- */
+.timer{font:700 1.25rem Poppins,sans-serif;color:var(--primary);
+  background:var(--primary-soft);border-radius:8px;padding:5px 14px}
+.timer.low{color:var(--danger);background:var(--danger-soft)}
+
+/* ---------- pass/fail pill ---------- */
+.pill{font-size:.78rem;font-weight:600;padding:3px 11px;border-radius:99px;border:1px solid var(--border);color:var(--muted)}
+.pill.ok{color:var(--success);background:var(--success-soft);border-color:var(--success-soft)}
+.pill.bad{color:var(--danger);background:var(--danger-soft);border-color:var(--danger-soft)}
+
+/* ---------- result summary ---------- */
+.score-wrap{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:4px}
+.score-big{display:flex;flex-direction:column;align-items:flex-start;gap:4px}
+.score-big b{font:700 2.6rem Poppins,sans-serif;color:var(--success);line-height:1}
+.score-big.fail b{color:var(--danger)}
+
+/* ---------- auth screen (split layout) ---------- */
+.authpage{min-height:100vh;display:flex}
+.auth-brand{flex:1 1 46%;position:relative;overflow:hidden;color:#fff;
+  background:linear-gradient(155deg,var(--primary) 0%,var(--primary-dark) 100%);
+  display:flex;align-items:center;padding:60px}
+.auth-brand::before,.auth-brand::after{content:"";position:absolute;border-radius:50%;
+  background:rgba(255,255,255,.08)}
+.auth-brand::before{width:420px;height:420px;right:-140px;top:-120px}
+.auth-brand::after{width:280px;height:280px;left:-90px;bottom:-110px}
+.auth-brand-inner{position:relative;max-width:380px}
+.brand-logo{display:inline-flex;align-items:center;gap:8px;font:700 1.1rem Poppins,sans-serif;
+  background:rgba(255,255,255,.14);padding:7px 14px;border-radius:99px;margin-bottom:28px}
+.auth-brand h1{color:#fff;font-size:2rem;line-height:1.25;margin-bottom:14px}
+.auth-brand p{color:rgba(255,255,255,.82);font-size:.98rem;line-height:1.6;margin-bottom:26px}
+.brand-points{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.brand-points li{display:flex;align-items:center;gap:10px;font-size:.92rem;color:rgba(255,255,255,.92)}
+.brand-points li i{width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.16);
+  display:flex;align-items:center;justify-content:center;font-style:normal;font-size:.8rem;flex:none}
+.auth-formside{flex:1 1 54%;display:flex;align-items:center;justify-content:center;
+  padding:40px 24px;background:var(--bg)}
+.auth-card{width:100%;max-width:380px}
+.auth-card .card{text-align:left}
+.auth-card h1{font-size:1.35rem}
+.auth-card p.mu{margin-top:2px}
+@media(max-width:860px){
+  .auth-brand{display:none}
+  .auth-formside{padding:28px 18px}
+}
+
+/* ---------- hero / dashboard greeting ---------- */
+.hero{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;
+  border-radius:14px;padding:22px 24px;margin-bottom:18px;
+  display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.hero h2{color:#fff;margin:0 0 4px}
+.hero p{margin:0;color:rgba(255,255,255,.85);font-size:.92rem}
+.hero .tiles{margin:0;display:flex;gap:10px}
+.hero .tile{min-width:104px}
+.hero .tile{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);box-shadow:none}
+.hero .tile b{color:#fff}
+.hero .tile{color:rgba(255,255,255,.85)}
+
+/* ---------- quiz list item ---------- */
+.qitem{display:flex;align-items:center;gap:14px;padding:14px 4px;border-bottom:1px solid var(--border)}
+.qitem:last-child{border-bottom:none}
+.qicon{width:42px;height:42px;border-radius:10px;background:var(--primary-soft);color:var(--primary);
+  display:flex;align-items:center;justify-content:center;font:700 1.05rem Poppins,sans-serif;flex:none}
+
+/* ---------- option grid with letter badges ---------- */
+.opt-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.opt{align-items:center}
+.optletter{width:26px;height:26px;border-radius:50%;background:var(--bg);border:1.5px solid var(--border);
+  color:var(--muted);display:flex;align-items:center;justify-content:center;
+  font:600 .78rem Inter,sans-serif;flex:none}
+.opt.sel .optletter{background:var(--primary);border-color:var(--primary);color:#fff}
+.opt.ok .optletter{background:var(--success);border-color:var(--success);color:#fff}
+.opt.bad .optletter{background:var(--danger);border-color:var(--danger);color:#fff}
+.opt input{display:none}
+@media(max-width:620px){.opt-grid{grid-template-columns:1fr}}
+
+/* ---------- footer ---------- */
+footer{max-width:900px;margin:8px auto 28px;padding:0 20px;color:var(--muted);font-size:.82rem;text-align:center}
+
+/* ---------- auth screen ---------- */
+@media(max-width:480px){
+  main{padding:14px}
+  .card{padding:16px}
+  .score-big b{font-size:2.1rem}
+  .hero{padding:18px}
+}
+
+.qtext{font-size:1.12rem;font-weight:500;line-height:1.5;margin:6px 0 16px}
+
+/* table action buttons stay compact so rows fit the card */
+td button{padding:6px 12px;font-size:.84rem;margin:0 4px 0 0}
+input,select{height:44px}
+textarea{height:auto}

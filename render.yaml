@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: online-exam-system
+    env: python
+    plan: free
+    buildCommand: "true"          # no dependencies to install — standard library only
+    startCommand: "python server.py"
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: DATA_DIR
+        value: /opt/render/project/data
+    disk:
+      name: exam-data
+      mountPath: /opt/render/project/data
+      sizeGB: 1
